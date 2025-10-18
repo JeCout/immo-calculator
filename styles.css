@@ -1,0 +1,175 @@
+/* CSS pour une interface Streamlit captivante avec étapes visibles et animations optimisées pour tunnel de conversion */
+@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css');
+
+.stApp {
+    background: linear-gradient(135deg, #1e3a8a 0%, #facc15 100%);
+    color: #f5f5f4;
+    font-family: 'Arial', sans-serif;
+    overflow-x: hidden;
+}
+
+.stHeader {
+    font-size: 2.5em;
+    font-weight: bold;
+    text-align: center;
+    color: #f5f5f4;
+    text-shadow: 2px 2px 4px #1e3a8a;
+    margin-bottom: 20px;
+    animation: fadeInDown 1s ease-out;
+}
+
+.stStep {
+    display: none;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 10px;
+    margin-bottom: 20px;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
+}
+
+.stStep.active {
+    display: block;
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.stStep::before {
+    font-family: "Font Awesome 6 Free";
+    font-weight: 900;
+    font-size: 2em;
+    position: absolute;
+    left: 20px;
+    top: 20px;
+    color: #facc15;
+    animation: bounceIn 1s ease-in-out;
+}
+
+.stStep#step-maison::before { content: "\f015"; } /* icône maison */
+.stStep#step-plex::before { content: "\f6a0"; } /* icône bâtiment */
+.stStep#step-condo::before { content: "\f1ad"; } /* icône immeuble */
+.stStep#step-terrain::before { content: "\f1bb"; } /* icône arbre */
+.stStep#step-autre::before { content: "\f021"; } /* icône divers */
+
+.stButton>button {
+    background-color: #facc15;
+    color: #1e3a8a;
+    border: none;
+    padding: 12px 25px;
+    font-size: 18px;
+    border-radius: 10px;
+    transition: transform 0.3s, box-shadow 0.3s, background-color 0.3s;
+    width: 100%;
+    max-width: 200px;
+}
+
+.stButton>button:hover {
+    transform: scale(1.1);
+    box-shadow: 0 5px 15px rgba(250, 204, 21, 0.5);
+    background-color: #ffd54f;
+}
+
+.stMetric {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 15px;
+    border-radius: 10px;
+    text-align: center;
+    margin: 10px 0;
+    animation: pulse 1.5s infinite;
+}
+
+.stProgress {
+    width: 100%;
+    background-color: #4b6cb7;
+    border-radius: 5px;
+    margin: 20px 0;
+    overflow: hidden;
+}
+
+.stProgressBar {
+    height: 20px;
+    background-color: #facc15;
+    text-align: center;
+    line-height: 20px;
+    color: #1e3a8a;
+    border-radius: 5px;
+    transition: width 0.6s ease;
+}
+
+.stInput {
+    background-color: rgba(255, 255, 255, 0.1);
+    border: 1px solid #facc15;
+    border-radius: 5px;
+    color: #f5f5f4;
+    padding: 5px;
+    transition: border-color 0.3s;
+}
+
+.stInput:focus {
+    border-color: #ffd54f;
+}
+
+.stSelectbox {
+    background-color: rgba(255, 255, 255, 0.1);
+    border: 1px solid #facc15;
+    border-radius: 5px;
+    color: #f5f5f4;
+    transition: border-color 0.3s;
+}
+
+.stSelectbox:focus {
+    border-color: #ffd54f;
+}
+
+.stRadio {
+    color: #f5f5f4;
+}
+
+.stChart {
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 10px;
+    padding: 10px;
+    animation: fadeIn 1s ease-in;
+}
+
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes bounceIn {
+    0% { transform: scale(0); opacity: 0; }
+    50% { transform: scale(1.2); opacity: 1; }
+    100% { transform: scale(1); }
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+    100% { transform: scale(1); }
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+.stApp {
+    background: linear-gradient(135deg, #1e3a8a 0%, #facc15 100%);
+    color: #f5f5f4;
+}
+.stButton>button {
+    background-color: #facc15;
+    color: #1e3a8a;
+    padding: 10px 20px;
+    border-radius: 10px;
+}
+.stTextInput>label, .stSelectbox>label {
+    color: #f5f5f4;
+}
