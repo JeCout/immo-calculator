@@ -1,9 +1,0 @@
-services:
-  - type: web
-    name: calculateur-proprietes
-    env: python
-    plan: free
-    region: oregon
-    buildCommand: "./.render-build.sh"
-    startCommand: "streamlit run calculateur_proprietes_streamlit.py --server.port $PORT --server.address 0.0.0.0"
-    pythonVersion: 3.13
